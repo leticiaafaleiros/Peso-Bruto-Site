@@ -31,7 +31,7 @@ function Avatar({ inicial }: { inicial: string }) {
   )
 }
 
-function Rating({ nota }: { nota: number }) {
+export function Rating({ nota }: { nota: number }) {
   return (
     <div className="flex gap-1">
       {[...Array(5)].map((_, i) => (
@@ -47,7 +47,11 @@ function Rating({ nota }: { nota: number }) {
 
 export function Avaliacoes() {
   return (
-    <section id="avaliacoes" className="py-20 bg-orange-400">
+    <section
+      id="avaliacoes"
+      data-testid="avaliacoes-section"
+      className="py-20 bg-orange-400"
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
@@ -60,6 +64,7 @@ export function Avaliacoes() {
                   key={i}
                   size={40}
                   className="fill-orange-600 text-orange-600"
+                  data-testid="main-star"
                 />
               ))}
             </div>
@@ -76,7 +81,9 @@ export function Avaliacoes() {
                 <Avatar inicial={avaliacao.inicial} />
                 <div className="flex-1">
                   <h3 className="font-semibold text-lg mb-1">{avaliacao.nome}</h3>
-                  <Rating nota={avaliacao.nota} />
+                  <div data-testid="rating-container">
+                    <Rating nota={avaliacao.nota} />
+                  </div>
                 </div>
               </div>
               <p className="text-gray-600">{avaliacao.texto}</p>

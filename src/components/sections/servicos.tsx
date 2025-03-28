@@ -1,71 +1,59 @@
-import React from 'react'
+'use client'
+
+import Image from 'next/image'
 
 const servicos = [
   {
-    id: 1,
-    titulo: 'Guincho para Utilitários',
-    descricao: 'Transporte seguro e eficiente para utilitários de todos os tamanhos.',
-    imagem: '/images/bgUtilitario.jpg',
+    icon: '/images/ico17.png',
+    title: 'GUINCHO 24 HORAS',
+    alt: 'Ícone de guincho'
   },
   {
-    id: 2,
-    titulo: 'Guincho para Veículos Pesados',
-    descricao: 'Especialistas em transporte de caminhões, ônibus e máquinas pesadas.',
-    imagem: '/images/bgPesado.jpg',
+    icon: '/images/ico19.png',
+    title: 'TROCA DE PNEU',
+    alt: 'Ícone de pneu'
   },
   {
-    id: 3,
-    titulo: 'Guincho para Caminhões',
-    descricao: 'Serviço especializado para caminhões de carga e reboques.',
-    imagem: '/images/bgCaminhao.jpg',
+    icon: '/images/ico20.png',
+    title: 'PANE SECA',
+    alt: 'Ícone de gasolina'
   },
   {
-    id: 4,
-    titulo: 'Carga de bateria',
-    descricao: 'Suporte para carga de bateria em caso de falha elétrica.',
-    imagem: '/images/guincho-24h.jpeg'
-  },
-  {
-    id: 5,
-    titulo: 'Troca de pneu',
-    descricao: 'Troca de pneu caso esteja furado.',
-    imagem: '/images/transporte-veiculos.jpeg'
-  },
-  {
-    id: 6,
-    titulo: 'Pane seca',
-    descricao: 'Suporte para pane seca para a falta de combustível.',
-    imagem: '/images/bgPesado3.jpeg'
+    icon: '/images/ico21.png',
+    title: 'CARGA DE BATERIA',
+    alt: 'Ícone de bateria'
   }
 ]
 
 export function Servicos() {
   return (
-    <section id="servicos" className="py-20 bg-gray-100">
+    <section 
+      id="servicos" 
+      className="py-16 bg-gray-50"
+      data-testid="servicos-section"
+    >
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
           Nossos Serviços
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {servicos.map((servico) => (
-            <div 
-              key={servico.id} 
-              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {servicos.map((servico, index) => (
+            <div
+              key={index}
+              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center"
             >
-              <div className="relative h-64 overflow-hidden">
-                <img
-                  src={servico.imagem}
-                  alt={servico.titulo}
-                  className="w-full h-full object-cover"
+              <div className="w-20 h-20 mb-4 relative">
+                <Image
+                  src={servico.icon}
+                  alt={servico.alt}
+                  width={80}
+                  height={80}
+                  className="object-contain"
                 />
-                <div className="absolute inset-0 bg-black/30" />
-                <h3 className="absolute bottom-0 left-0 w-full p-4 text-white font-semibold text-xl bg-gradient-to-t from-black/70 to-transparent">
-                  {servico.titulo}
-                </h3>
               </div>
-              <div className="p-6">
-                <p className="text-gray-600">{servico.descricao}</p>
-              </div>
+              <h3 className="text-xl font-semibold text-gray-800">
+                {servico.title}
+              </h3>
             </div>
           ))}
         </div>
