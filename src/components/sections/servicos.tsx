@@ -6,22 +6,26 @@ const servicos = [
   {
     icon: '/images/ico17.png',
     title: 'GUINCHO 24 HORAS',
-    alt: 'Ícone de guincho'
+    alt: 'Ícone de guincho',
+    descricao: 'Atendimento imediato em qualquer horário do dia ou da noite.'
   },
   {
     icon: '/images/ico19.png',
     title: 'TROCA DE PNEU',
-    alt: 'Ícone de pneu'
+    alt: 'Ícone de pneu',
+    descricao: 'Assistência rápida para troca de pneus em qualquer local.'
   },
   {
     icon: '/images/ico20.png',
     title: 'PANE SECA',
-    alt: 'Ícone de gasolina'
+    alt: 'Ícone de gasolina',
+    descricao: 'Entrega de combustível onde você estiver.'
   },
   {
     icon: '/images/ico21.png',
     title: 'CARGA DE BATERIA',
-    alt: 'Ícone de bateria'
+    alt: 'Ícone de bateria',
+    descricao: 'Auxílio com bateria descarregada e serviço de chave de partida.'
   }
 ]
 
@@ -51,9 +55,12 @@ export function Servicos() {
                   className="object-contain"
                 />
               </div>
-              <h3 className="text-xl font-semibold text-gray-800">
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">
                 {servico.title}
               </h3>
+              <p className="text-gray-600">
+                {servico.descricao}
+              </p>
             </div>
           ))}
         </div>

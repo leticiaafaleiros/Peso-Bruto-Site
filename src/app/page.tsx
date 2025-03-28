@@ -17,21 +17,3 @@ export default function Home() {
     </main>
   )
 }
-
-const servicos = [
-  {
-    titulo: "Guincho 24h",
-    descricao: "Atendimento imediato em qualquer horário do dia ou da noite.",
-    imagem: "/images/guincho-24h.jpg",
-  },
-  {
-    titulo: "Assistência Técnica",
-    descricao: "Profissionais especializados para resolver problemas mecânicos.",
-    imagem: "/images/assistencia-tecnica.jpg",
-  },
-  {
-    titulo: "Transporte de Veículos",
-    descricao: "Serviço seguro para transportar seu veículo para qualquer localidade.",
-    imagem: "/images/transporte-veiculos.jpg",
-  },
-]

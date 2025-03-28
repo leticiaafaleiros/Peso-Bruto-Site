@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import { BLUR_DATA_URLS } from '@/lib/constants/images'
 
 export function Hero() {
   return (
@@ -10,16 +11,21 @@ export function Hero() {
       className="relative h-screen flex items-center justify-center bg-black text-white"
     >
       {/* Background Image */}
-      <div className="absolute inset-0 z-0 bg-black/50">
+      <div className="absolute inset-0 z-0">
         <Image
           src="/images/guincho-24h.jpeg"
           alt="Guincho 24 horas em ação"
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
           className="object-cover"
           priority
-          quality={90}
+          quality={75}
+          loading="eager"
+          fetchPriority="high"
+          placeholder="blur"
+          blurDataURL={BLUR_DATA_URLS.HERO_BG}
         />
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
       </div>
 
       {/* Content */}
