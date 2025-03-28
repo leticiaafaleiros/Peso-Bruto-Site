@@ -1,35 +1,65 @@
-# Peso Bruto Guincho 24h - Site Institucional
+# Peso Bruto - Auto Socorro 24H
 
-Site institucional para a empresa Peso Bruto Guincho 24h, especializada em serviços de guincho e assistência veicular em Franca - SP e região.
+Site institucional da Peso Bruto Auto Socorro 24H, empresa especializada em serviços de guincho e assistência veicular 24 horas.
 
-## Tecnologias Utilizadas
+## Tecnologias
 
-- Next.js
+- Next.js 14
 - React
 - TypeScript
 - Tailwind CSS
-- Lucide React (ícones)
+- Shadcn/ui
+- Jest
+- Testing Library
+- ESLint
+- Prettier
 
 ## Funcionalidades
 
-- Layout 100% responsivo
-- Formulário de contato com integração ao WhatsApp
-- Seções para serviços, sobre a empresa e avaliações
-- Otimização de imagens com Next.js
-- Integração com Google Places para exibição de avaliações
+- Design responsivo
+- Otimização de imagens
+- SEO otimizado
+- Testes automatizados
+- Componentes reutilizáveis
+- Performance otimizada
 
-## Como Executar
+## Instalação
 
 1. Clone o repositório
-2. Instale as dependências:
+```bash
+git clone https://github.com/seu-usuario/peso-bruto-24h.git
 ```
+
+2. Instale as dependências
+```bash
 npm install
 ```
-3. Execute o servidor de desenvolvimento:
-```
+
+3. Execute o projeto em modo de desenvolvimento
+```bash
 npm run dev
 ```
-4. Acesse `http://localhost:3000` no seu navegador
+
+4. Execute os testes
+```bash
+npm test
+```
+
+## Estrutura do Projeto
+
+```
+src/
+  ├── app/                    # Páginas da aplicação
+  ├── components/             # Componentes React
+  │   ├── Button/            # Componentes de UI
+  │   └── sections/          # Seções da página
+  ├── lib/                   # Utilitários e configurações
+  └── tests/                 # Testes automatizados
+```
+
+## Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ## Contato
 
